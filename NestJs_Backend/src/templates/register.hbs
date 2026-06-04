@@ -1,0 +1,123 @@
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Xác nhận đăng ký tài khoản</title>
+		<style>
+			body {
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				line-height: 1.6;
+				color: #333;
+				max-width: 600px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #f4f4f4;
+			}
+			.container {
+				background-color: #ffffff;
+				border-radius: 10px;
+				padding: 30px;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
+			.header {
+				text-align: center;
+				border-bottom: 2px solid #007bff;
+				padding-bottom: 20px;
+				margin-bottom: 30px;
+			}
+			.header h1 {
+				color: #007bff;
+				margin: 0;
+			}
+			.content {
+				padding: 20px 0;
+			}
+			.content h2 {
+				color: #333;
+			}
+			.code-box {
+				background-color: #f8f9fa;
+				border: 2px dashed #007bff;
+				border-radius: 8px;
+				padding: 20px;
+				text-align: center;
+				margin: 20px 0;
+			}
+			.code {
+				font-size: 32px;
+				font-weight: bold;
+				color: #007bff;
+				letter-spacing: 5px;
+			}
+			.btn {
+				display: inline-block;
+				background-color: #007bff;
+				color: #ffffff;
+				text-decoration: none;
+				padding: 12px 30px;
+				border-radius: 5px;
+				margin: 20px 0;
+			}
+			.btn:hover {
+				background-color: #0056b3;
+			}
+			.footer {
+				text-align: center;
+				margin-top: 30px;
+				padding-top: 20px;
+				border-top: 1px solid #eee;
+				color: #666;
+				font-size: 14px;
+			}
+			.warning {
+				background-color: #fff3cd;
+				border: 1px solid #ffc107;
+				border-radius: 5px;
+				padding: 15px;
+				margin: 20px 0;
+				color: #856404;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>🎉 Chào mừng bạn!</h1>
+			</div>
+
+			<div class="content">
+				<h2>Xin chào {{username}},</h2>
+				<p>Cảm ơn bạn đã đăng ký tài khoản. Để hoàn tất quá trình đăng
+					ký, vui lòng sử dụng mã xác nhận dưới đây:</p>
+
+				<div class="code-box">
+					<p>Mã xác nhận của bạn:</p>
+					<div class="code">{{activationCode}}</div>
+				</div>
+
+				{{#if activationLink}}
+					<p style="text-align: center;">Hoặc nhấn vào nút bên dưới:</p>
+					<p style="text-align: center;">
+						<a href="{{activationLink}}" class="btn">Xác nhận tài
+							khoản</a>
+					</p>
+				{{/if}}
+
+				<div class="warning">
+					<strong>⚠️ Lưu ý:</strong>
+					Mã xác nhận này sẽ hết hạn sau
+					<strong>1 giờ</strong>. Vui lòng không chia sẻ mã này với
+					bất kỳ ai.
+				</div>
+
+				<p>Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua email
+					này.</p>
+			</div>
+
+			<div class="footer">
+				<p>Trân trọng,<br /><strong>Đội ngũ hỗ trợ</strong></p>
+				<p>© {{year}} Công ty của bạn. Mọi quyền được bảo lưu.</p>
+			</div>
+		</div>
+	</body>
+</html>

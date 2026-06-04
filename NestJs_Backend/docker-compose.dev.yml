@@ -1,0 +1,51 @@
+services:
+    nestjs-app:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        container_name: nestjs-app-dev
+        restart: always
+        ports:
+            - "3001:3001"
+            - "9229:9229" # Debug port
+        env_file:
+            - .env
+        environment:
+            NODE_ENV: development
+            PORT: "3001"
+            WATCHPACK_POLLING: "true"
+            CHOKIDAR_USEPOLLING: "true"
+            DB_HOST: mysql-nestjs
+            MONGODB_URI: mongodb://mongo-nestjs:27017/nestjs_db
+        depends_on:
+            - mysql
+            - mongodb
+        volumes:
+            - .:/app
+            - /app/node_modules
+        command: npm run start:debug # Enable debug mode
+
+    mysql:
+        image: mysql:8.0
+        container_name: mysql-nestjs
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root123
+            MYSQL_DATABASE: nestjs_db
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysql-data:/var/lib/mysql
+
+    mongodb:
+        image: mongo:7
+        container_name: mongo-nestjs
+        restart: always
+        ports:
+            - "27017:27017"
+        volumes:
+            - mongo-data:/data/db
+
+volumes:
+    mysql-data:
+    mongo-data:
