@@ -141,11 +141,10 @@ export interface User {
 }
 
 export interface NavItem {
-   title: string;
+   label: string;
    href: string;
    disabled?: boolean;
    external?: boolean;
-   label?: string;
 }
 
 export interface Feature {

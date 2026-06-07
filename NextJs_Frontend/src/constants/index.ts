@@ -36,14 +36,13 @@ export const STATUS_CODES = {
 
 
 export const siteConfig = {
-  name: "NextApp",
-  description: "Ứng dụng web hiện đại với Next.js, TailwindCSS và shadcn/ui",
-  url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+   name: "NextApp",
+   description: "Ứng dụng web hiện đại với Next.js, TailwindCSS và shadcn/ui",
+   url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
 };
 
-export const navItems: NavItem[] = [
-  { title: "Tính năng", href: "/#features" },
-  { title: "Bảng giá", href: "/#pricing" },
-  { title: "Blog", href: "/blog" },
-  { title: "Liên hệ", href: "/contact" },
+export const NAV_ITEMS: NavItem[] = [
+   { label: "Dashboard", href: "/dashboard" },
+   { label: "Search", href: "/search" },
+   { label: "Watchlist", href: "/watchlist" },
 ];

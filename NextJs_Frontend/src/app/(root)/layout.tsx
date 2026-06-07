@@ -1,16 +1,16 @@
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
+import { Navbar } from '@/components/layout/navbar';
+import { Footer } from '@/components/layout/footer';
+import Header from '@/components/header';
 
 export default function RootGroupLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </div>
-  );
+	return (
+		<main className='min-h-screen text-gray-400'>
+			<Header />
+			<div className='container py-10'>{children}</div>
+		</main>
+	);
 }
