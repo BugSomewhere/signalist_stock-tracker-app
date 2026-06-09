@@ -1,7 +1,4 @@
-import { Navbar } from '@/components/layout/navbar';
-import { Footer } from '@/components/layout/footer';
-import Header from '@/components/header';
-
+import Header from '@/components/Header';
 export default function RootGroupLayout({
 	children,
 }: {
