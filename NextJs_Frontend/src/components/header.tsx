@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '@/public/assets/icons/logo.svg';
 import NavItems from '@/components/NavItems';
 import UserDropdown from './UserDropdown';
 
@@ -11,7 +10,7 @@ const Header = () => {
 			<div className='container header-wrapper'>
 				<Link href='/'>
 					<Image
-						src={logo}
+						src='/assets/icons/logo.svg'
 						alt='Signalist Logo'
 						width={140}
 						height={32}
