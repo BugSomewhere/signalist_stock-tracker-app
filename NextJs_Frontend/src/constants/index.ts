@@ -1,7 +1,7 @@
-import type { NavItem } from "@/types";
+import { NavItem } from '@/types';
 
 // API Constants
-export const API_BASE_URL = process.env.NEST_PUBLIC_API_URL || 'http://localhost:3000/api';
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 
 // Routes
 export const ROUTES = {
